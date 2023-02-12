@@ -60,10 +60,10 @@ namespace CustomLinkedList
                         break;
                     case 7:
                         list.Append(56);
+                        list.Append(30);
+                        list.Append(40);
                         list.Append(70);
-                        list.Append(90);
-                        list.Append(80);
-                        list.Remove(90);
+                        list.Remove(40);
                         list.Display();
                         break;
                     case 8:
@@ -73,6 +73,7 @@ namespace CustomLinkedList
                         list.Display();
                         list.Search(30);
                         break;
+                    
                     case 22:
                         flag = false;
                         break;

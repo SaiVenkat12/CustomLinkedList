@@ -62,28 +62,6 @@ namespace CustomLinkedList
                 }
             }
         }
-        public void Remove(int data) 
-        { 
-            Node newNode= new Node(data);
-            Node temp= head;
-            if (head.data == data)
-            {
-                Console.WriteLine("List is Empty");
-            }
-            else
-            {
-                while (temp.next != null)
-                {
-                    if (temp.next.data == data)
-                    {
-                        temp.next = temp.next.next;
-                        Console.WriteLine("{0} is removed from the list", data);
-                        break;
-                    }
-                    temp=temp.next;
-                }
-            }
-        }
         public void RemoveFirst()
         {
             if (head == null)
@@ -118,6 +96,28 @@ namespace CustomLinkedList
 
             }
         }
+        public void Remove(int data)
+        {
+            Node newNode = new Node(data);
+            Node temp = head;
+            if (head.data == data)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                while (temp.next != null)
+                {
+                    if (temp.next.data == data)
+                    {
+                        temp.next = temp.next.next;
+                        Console.WriteLine("{0} is removed from the list", data);
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+        }
         public void Search(int data)
         {
             Node temp = head;
@@ -143,6 +143,7 @@ namespace CustomLinkedList
                     Console.WriteLine("\n{0} is not found ", data);
             }
         }
+       
         public void Display()
         {
             Console.WriteLine("Linked List");
