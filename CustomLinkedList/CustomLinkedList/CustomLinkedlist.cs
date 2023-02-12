@@ -143,7 +143,28 @@ namespace CustomLinkedList
                     Console.WriteLine("\n{0} is not found ", data);
             }
         }
-       
+        public void Size()
+        {
+            Node temp = head;
+            int count = 0;
+            if (head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    count++;
+                    if (temp.next == null)
+                    {
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                Console.WriteLine("\nThe Size of the Linked List is {0}", count);
+            }
+        }
         public void Display()
         {
             Console.WriteLine("Linked List");
