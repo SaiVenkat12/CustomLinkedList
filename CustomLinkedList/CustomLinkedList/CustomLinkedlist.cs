@@ -28,6 +28,13 @@ namespace CustomLinkedList
                 Console.WriteLine("{0} inserted into the LinkedList", newNode.data);
             }
         }
+        public void AddFist(int data)
+        {
+            Node newNode = new Node(data);           
+            newNode.next = head;
+            head= newNode;
+            Console.WriteLine("{0} inserted into the LinkedList", newNode.data);
+        }
         public void Display()
         {
             if (head == null)
