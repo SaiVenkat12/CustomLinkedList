@@ -17,8 +17,8 @@ namespace CustomLinkedList
             //list.AddFist(56);
 
             list.Append(56);
-            list.Append(30);
             list.Append(70);
+            list.InsertAtAnyPoint(30, 56);
 
             list.Display();
 

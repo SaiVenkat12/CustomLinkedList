@@ -39,6 +39,24 @@ namespace CustomLinkedList
         {
             Add(data);
         }
+        public void InsertAtAnyPoint(int data,int data2)
+        {
+            Node newNode = new Node(data);
+            Node temp= head;
+            while(temp != null)
+            {
+                if(temp.data==data2)
+                {                    
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                    break;
+                }
+                else
+                {
+                    temp = temp.next;
+                }
+            }
+        }
         public void Display()
         {
             if (head == null)
