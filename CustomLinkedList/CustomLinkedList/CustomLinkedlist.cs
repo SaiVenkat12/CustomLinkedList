@@ -96,6 +96,28 @@ namespace CustomLinkedList
                 head = head.next;
             }
         }
+        public void RemoveLast()
+        {
+            Node temp = head;
+            if (head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                while(temp != null )
+                {
+                    if (temp.next.next == null)
+                    {
+                        Console.WriteLine("{0} is removed from the list", temp.next.data);
+                        temp.next = null;                       
+                        break;
+                    }
+                    temp = temp.next;
+                }
+
+            }
+        }
         public void Display()
         {
             Console.WriteLine("Linked List");

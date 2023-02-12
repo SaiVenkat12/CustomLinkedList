@@ -16,7 +16,7 @@ namespace CustomLinkedList
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("\n1.Add Elements into LinkedList \n2.AddFirst \n3.AddLast \n4.InsertAtAnyPoint \n5.RemoveFirst \n7.Remove \n22.Exit");
+                Console.WriteLine("\n1.Add Elements into LinkedList \n2.AddFirst \n3.AddLast \n4.InsertAtAnyPoint \n5.RemoveFirst \n6.RemoveLast \n7.Remove \n22.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -51,14 +51,22 @@ namespace CustomLinkedList
                         list.RemoveFirst();
                         list.Display();
                         break;
+                    case 6:
+                        list.Append(56);
+                        list.Append(30);
+                        list.Append(70);                        
+                        list.RemoveLast();
+                        list.Display();
+                        break;
                     case 7:
                         list.Append(56);
                         list.Append(70);
                         list.Append(90);
-                        list.Append(70);
+                        list.Append(80);
                         list.Remove(90);
                         list.Display();
-                        break;
+                        break; 
+                   
                     case 22:
                         flag = false;
                         break;
