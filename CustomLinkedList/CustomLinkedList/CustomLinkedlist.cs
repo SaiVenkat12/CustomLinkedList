@@ -43,22 +43,62 @@ namespace CustomLinkedList
         {
             Node newNode = new Node(data);
             Node temp= head;
-            while(temp != null)
+            if (head == null)
             {
-                if(temp.data==data2)
-                {                    
-                    newNode.next = temp.next;
-                    temp.next = newNode;
-                    break;
-                }
-                else
+                Console.WriteLine("List is Empty");
+            }
+           else
+            {
+                while (temp != null)
                 {
-                    temp = temp.next;
+                    if (temp.data == data2)
+                    {
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        Console.WriteLine("{0} inserted into the LinkedList", data);
+                        break;
+                    }                    
+                        temp = temp.next;                   
                 }
+            }
+        }
+        public void Remove(int data) 
+        { 
+            Node newNode= new Node(data);
+            Node temp= head;
+            if (head.data == data)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                while (temp.next != null)
+                {
+                    if (temp.next.data == data)
+                    {
+                        temp.next = temp.next.next;
+                        Console.WriteLine("{0} is removed from the list", data);
+                        break;
+                    }
+                    temp=temp.next;
+                }
+            }
+        }
+        public void RemoveFirst()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                Console.WriteLine("{0} is removed from the list", head.data);
+                head = head.next;
             }
         }
         public void Display()
         {
+            Console.WriteLine("Linked List");
             if (head == null)
             {
                 Console.WriteLine("List is Empty");
