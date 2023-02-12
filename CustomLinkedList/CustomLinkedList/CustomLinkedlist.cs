@@ -35,6 +35,10 @@ namespace CustomLinkedList
             head= newNode;
             Console.WriteLine("{0} inserted into the LinkedList", newNode.data);
         }
+        public void Append(int data)
+        {
+            Add(data);
+        }
         public void Display()
         {
             if (head == null)
