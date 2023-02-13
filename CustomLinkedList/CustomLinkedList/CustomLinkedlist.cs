@@ -98,7 +98,6 @@ namespace CustomLinkedList
         }
         public void Remove(int data)
         {
-            Node newNode = new Node(data);
             Node temp = head;
             if (head == null)
                 Console.WriteLine("List is Empty");           
@@ -120,6 +119,10 @@ namespace CustomLinkedList
                     temp = temp.next;
                 }
             }
+        }
+        public void RemoveList()
+        {
+            head= null;
         }
         public void Search(int data)
         {
@@ -146,7 +149,7 @@ namespace CustomLinkedList
                     Console.WriteLine("{0} is not found ", data);
             }
         }
-        public void Size()
+        public int Size()
         {
             Node temp = head;
             int count = 0;
@@ -165,8 +168,53 @@ namespace CustomLinkedList
                     }
                     temp = temp.next;
                 }
-                Console.WriteLine("The Size of the Linked List is {0}", count);
             }
+            return count;
+        }
+        public void SortAdd(int data)
+        {
+            Node newNode = new Node(data);
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = newNode;
+            }
+        }
+        public void OrderedLinkedList()
+        {
+
+            Node temp = head;
+            int size = Size();
+            int[] arr = new int[size];
+
+            if (head == null)
+                Console.WriteLine("List is Empty");
+            else
+            {               
+                int i = 0;
+                while(temp!=null)
+                {
+                    arr[i] = temp.data;
+                    temp= temp.next;
+                    i++;
+                }
+            }
+            RemoveList();
+            Array.Sort(arr);
+            for(int i=0;i<arr.Length;i++)
+            {
+                int data= arr[i];
+                SortAdd(data);
+            }
+
         }
         public void Display()
         {
