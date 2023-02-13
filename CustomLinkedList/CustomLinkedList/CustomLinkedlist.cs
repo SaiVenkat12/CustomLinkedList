@@ -100,9 +100,12 @@ namespace CustomLinkedList
         {
             Node newNode = new Node(data);
             Node temp = head;
-            if (head.data == data)
+            if (head == null)
+                Console.WriteLine("List is Empty");           
+            else if (head.data == data)
             {
-                Console.WriteLine("List is Empty");
+                head=head.next;
+                Console.WriteLine("{0} is removed from the list", data);
             }
             else
             {
@@ -134,13 +137,13 @@ namespace CustomLinkedList
                     count++;
                     if(temp.data==data)
                     {
-                        Console.WriteLine("\n{0} is found at position {1}", temp.data, count);
+                        Console.WriteLine("{0} is found at position {1}", temp.data, count);
                         isFound= true;
                     }
                     temp=temp.next;
                 }
                 if (!isFound)
-                    Console.WriteLine("\n{0} is not found ", data);
+                    Console.WriteLine("{0} is not found ", data);
             }
         }
         public void Size()
@@ -162,7 +165,7 @@ namespace CustomLinkedList
                     }
                     temp = temp.next;
                 }
-                Console.WriteLine("\nThe Size of the Linked List is {0}", count);
+                Console.WriteLine("The Size of the Linked List is {0}", count);
             }
         }
         public void Display()
@@ -180,6 +183,7 @@ namespace CustomLinkedList
                     Console.Write(temp.data + " ");
                     temp = temp.next;
                 }
+                Console.WriteLine("\n");
             }
         }
     }
